@@ -2,6 +2,7 @@ package Gauntlet.Klass;
 
 import Gauntlet.Util.ArmourClass;
 import Gauntlet.Util.HealthBar;
+import Gauntlet.Util.Stats;
 
 public abstract class Klass {
     private HealthBar hp;
@@ -11,6 +12,7 @@ public abstract class Klass {
     public Klass(HealthBar hp, ArmourClass ac, Stats stats) {
         this.hp = hp;
         this.ac = ac;
+        this.stats = stats;
     }
 
     public HealthBar getHp() {
@@ -21,8 +23,12 @@ public abstract class Klass {
         this.hp = hp;
     }
 
-    public ArmourClass getAc() {
+    public ArmourClass getArmourClass() {
         return ac;
+    }
+
+    public Stats getStats() {
+        return stats;
     }
 
     public void setAc(ArmourClass ac) {

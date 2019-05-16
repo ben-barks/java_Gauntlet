@@ -13,11 +13,20 @@ public class ArmourClass {
         return defaultAC;
     }
 
-    public int getCurrentAC() {
+    public int getCurrent() {
         return currentAC;
     }
 
     public boolean didItHit(int damage){
         return damage > currentAC;
     }
-}
+
+    public void increase(int amount){
+        this.currentAC += amount;
+    }
+
+    public void decrease(int amount) {
+        this.currentAC -= amount;
+    }
+
+    }
