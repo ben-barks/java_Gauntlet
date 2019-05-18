@@ -1,26 +1,29 @@
 package Gauntlet.Character;
 
-import Gauntlet.Interfaces.IPickup;
-import Gauntlet.Interfaces.IStatusEffect;
-import Gauntlet.Interfaces.IUltimate;
+import Gauntlet.Interfaces.*;
 import Gauntlet.Items.Armour.BaseArmour;
 import Gauntlet.Items.Weapons.BaseWeapon;
 import Gauntlet.Klass.Klass;
 import Gauntlet.StatusEffects.Buff.Drunk;
+import Gauntlet.Util.DiceRoll;
 import Gauntlet.Util.Purse;
 
-public class Character {
+public class Character implements IAttack, IDefend {
     private Klass klass;
     private Purse purse;
     private IUltimate ultimate;
     private IStatusEffect statusEffect;
     private BaseWeapon baseWeapon;
     private BaseArmour baseArmour;
+    private int attackScore;
+    private int defendScore;
 
     public Character(Klass klass, Purse purse, IUltimate ultimate) {
         this.klass = klass;
         this.purse = purse;
         this.ultimate = ultimate;
+        this.attackScore = new DiceRoll().usingRandomClass() + 1;
+        this.defendScore = new DiceRoll().usingRandomClass();
     }
 
     public Klass getKlass() {
@@ -81,4 +84,14 @@ public class Character {
     public void setStatusEffect(IStatusEffect statusEffect) {
         this.statusEffect = statusEffect;
      }
+
+    @Override
+    public void attack() {
+
+    }
+
+    @Override
+    public void defend() {
+
+    }
 }
