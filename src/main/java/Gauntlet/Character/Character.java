@@ -4,7 +4,6 @@ import Gauntlet.Interfaces.*;
 import Gauntlet.Items.Armour.BaseArmour;
 import Gauntlet.Items.Weapons.BaseWeapon;
 import Gauntlet.Klass.Klass;
-import Gauntlet.StatusEffects.Buff.Drunk;
 import Gauntlet.Util.DiceRoll;
 import Gauntlet.Util.Purse;
 
@@ -15,15 +14,15 @@ public class Character implements IAttack, IDefend {
     private IStatusEffect statusEffect;
     private BaseWeapon baseWeapon;
     private BaseArmour baseArmour;
-    private int attackScore;
-    private int defendScore;
+    public int attackScore;
+    public int defendScore;
 
     public Character(Klass klass, Purse purse, IUltimate ultimate) {
         this.klass = klass;
         this.purse = purse;
         this.ultimate = ultimate;
         this.attackScore = new DiceRoll().usingRandomClass() + 1;
-        this.defendScore = new DiceRoll().usingRandomClass();
+        this.defendScore = new DiceRoll().usingRandomClass() + 5;
     }
 
     public Klass getKlass() {

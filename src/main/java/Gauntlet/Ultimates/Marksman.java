@@ -7,6 +7,6 @@ public class Marksman implements IUltimate {
 
     @Override
     public void activate(Character character) {
-
+        character.attackScore += 5;
     }
 }

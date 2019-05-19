@@ -6,6 +6,6 @@ import Gauntlet.Interfaces.IUltimate;
 public class TelekineticBlast implements IUltimate {
     @Override
     public void activate(Character character) {
-
+        // TODO miss a turn somehow
     }
 }
